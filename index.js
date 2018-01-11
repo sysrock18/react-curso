@@ -6,4 +6,4 @@ const container = document.getElementById('app')
 
 const hello = <h1>Hello!</h1>
 
-render(<Media />, app)
+render(<Media title="Bitcoin" author="Simon Gonzalez" image="./images/covers/bitcoin.jpg" type="video" />, app)
