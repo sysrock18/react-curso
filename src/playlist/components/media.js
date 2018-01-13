@@ -7,13 +7,6 @@ class Media extends Component {
     author: this.props.author
   }
 
-  handleClick = () => {
-    console.log(this.props.title)
-    this.setState({
-      author: 'Leonidas Esteban'
-    })
-  }
-
   render() {
     const styles = {
       container: {
@@ -26,7 +19,7 @@ class Media extends Component {
     }
 
     return (
-      <div className="Media" onClick={this.handleClick}>
+      <div className="Media" onClick={this.props.handleClick}>
         <div className="Media-cover">
           <img className="Media-image" src={this.props.cover} alt="" width={260} height={160} />
           <h3 className="Media-title">{this.props.title}</h3>
