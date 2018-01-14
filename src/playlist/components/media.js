@@ -7,6 +7,8 @@ class Media extends Component {
     author: this.props.author
   }
 
+  handleClick = () => this.props.openModal(this.props)
+
   render() {
     const styles = {
       container: {
@@ -17,9 +19,10 @@ class Media extends Component {
         width: 260
       }
     }
+    
 
     return (
-      <div className="Media" onClick={this.props.handleClick}>
+      <div className="Media" onClick={this.handleClick}>
         <div className="Media-cover">
           <img className="Media-image" src={this.props.cover} alt="" width={260} height={160} />
           <h3 className="Media-title">{this.props.title}</h3>

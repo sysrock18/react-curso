@@ -5,13 +5,19 @@ import Related from '../components/related'
 import ModalContainer from '../../widgets/containers/modal'
 import Modal from '../../widgets/components/modal'
 import HandleError from '../../errors/containers/handle-error'
+import VideoPlayer from '../../player/containers/video-player'
 
 class Home extends Component {
   state = {
     modalVisible: false
   }
 
-  handleOpenModal = (event) => this.setState({ modalVisible: true })
+  handleOpenModal = (media) => {
+    this.setState({
+      modalVisible: true,
+      media
+    })
+  }
 
   handleCloseModal = (event) => this.setState({ modalVisible: false })
 
@@ -28,7 +34,11 @@ class Home extends Component {
             this.state.modalVisible && 
               <ModalContainer>
                 <Modal handleClick={this.handleCloseModal}>
-                  <h1>Esto es un portal</h1>
+                  <VideoPlayer
+                    autoplay
+                    src={this.state.media.src}
+                    title={this.state.media.title}
+                  />
                 </Modal>
               </ModalContainer>
           }
